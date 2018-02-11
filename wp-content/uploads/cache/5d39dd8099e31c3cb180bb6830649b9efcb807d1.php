@@ -1,9 +1,8 @@
 <header class="banner">
   <div class="container">
-    <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
+    <a class="brand" href="<?php echo e(home_url('/')); ?>"><?php echo e(get_bloginfo('name', 'display')); ?></a>
     <nav class="nav-primary">
-      @if (has_nav_menu('primary_navigation')) {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav'])
-      !!} @endif
+      <?php if(has_nav_menu('primary_navigation')): ?> <?php echo wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']); ?> <?php endif; ?>
     </nav>
   </div>
 </header>
@@ -41,12 +40,12 @@
         <ul class="languge">
           <li>
             <a href="#">
-              <img src="@asset('images/ar.png')">
+              <img src="<?= App\asset_path('images/ar.png'); ?>">
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="@asset('images/en.png')">
+              <img src="<?= App\asset_path('images/en.png'); ?>">
             </a>
           </li>
         </ul>
@@ -62,7 +61,7 @@
 <div class="container">
   <div class=" navbar">
     <a class="logo" href="index.html">
-      <img alt="logo" src="@asset('images/logo-title.png')">
+      <img alt="logo" src="<?= App\asset_path('images/logo-title.png'); ?>">
     </a>
     <div class="button-bg">
       <div class="menu-icon"></div>

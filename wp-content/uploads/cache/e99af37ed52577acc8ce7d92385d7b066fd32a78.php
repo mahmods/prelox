@@ -1,10 +1,10 @@
 <!--Start Footer-->
-<div class="footer" data-src="@asset('images/footer.png')">
+<div class="footer" data-src="<?= App\asset_path('images/footer.png'); ?>">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-lg-4">
                     <a href="index.html">
-                        <img src="@asset('images/logo-footer.png')">
+                        <img src="<?= App\asset_path('images/logo-footer.png'); ?>">
                     </a>
                     <p>منتج طبيعي 100% ذو تركيبه فريدة مبتكره ومثبته علميا وحائزه علي براءة إختراع</p>
                 </div>
@@ -82,7 +82,7 @@
             <span>جميع الحقوق محفوظة لدينا</span>
             <div class="mahacode-copyrights">
                 <a target="_blank" href="http://mahacode.com/" class="logo">
-                    <img src="@asset('images/mahacode.png')" alt="logo">
+                    <img src="<?= App\asset_path('images/mahacode.png'); ?>" alt="logo">
                 </a>
                 <div class="mc-tooltip">
                     <h3>تصميم وتطوير شركة مها كود</h3>
