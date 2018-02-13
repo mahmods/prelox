@@ -1,13 +1,3 @@
-<header class="banner">
-  <div class="container">
-    <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
-    <nav class="nav-primary">
-      @if (has_nav_menu('primary_navigation')) {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav'])
-      !!} @endif
-    </nav>
-  </div>
-</header>
-
 <!--Start Navigation-->
 <div class="navigation">
   <div class="container">
@@ -37,18 +27,8 @@
         </ul>
       </div>
       <div class="col-xs-12  col-md-4">
-
         <ul class="languge">
-          <li>
-            <a href="#">
-              <img src="@asset('images/ar.png')">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="@asset('images/en.png')">
-            </a>
-          </li>
+          <?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?>
         </ul>
       </div>
 
@@ -61,29 +41,15 @@
 <!--Start Navbar-->
 <div class="container">
   <div class=" navbar">
-    <a class="logo" href="index.html">
+    <a class="logo" href="{{ home_url('/') }}">
       <img alt="logo" src="@asset('images/logo-title.png')">
     </a>
     <div class="button-bg">
       <div class="menu-icon"></div>
     </div>
-    <ul class="menu">
-      <li>
-        <a href="index.html" title="link">الرئيسية</a>
-      </li>
-      <li>
-        <a href="about-us.html" title="link">من نحن</a>
-      </li>
-      <li>
-        <a href="product.html" title="link">عن المنتج</a>
-      </li>
-      <li>
-        <a href="single.html" title="link">أراء العملاء عنا</a>
-      </li>
-      <li>
-        <a href="blog.html" title="link">المدونة</a>
-      </li>
-    </ul>
+      @if (has_nav_menu('primary_navigation'))
+      {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu'])!!}
+      @endif
     <a href="product.html" class="order-button">احجز المنتج الان</a>
   </div>
 </div>

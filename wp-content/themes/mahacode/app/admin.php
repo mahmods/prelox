@@ -22,3 +22,8 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
 add_action('customize_preview_init', function () {
     wp_enqueue_script('sage/customizer.js', asset_path('scripts/customizer.js'), ['customize-preview'], null, true);
 });
+
+add_action('do_meta_boxes', function () {
+	remove_meta_box( 'postimagediv', 'post', 'side' );
+	add_meta_box( 'postimagediv', 'Article Image', 'post_thumbnail_meta_box', 'post', 'side', 'high' );
+});

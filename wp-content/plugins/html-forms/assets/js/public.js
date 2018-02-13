@@ -1,14 +1,14 @@
-(function () { var require = undefined; var module = undefined; var exports = undefined; var define = undefined;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function () { var require = undefined; var module = undefined; var exports = undefined; var define = undefined;(function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-function toggleElement(el, expectedValue, show) {
+function toggleElement(el, expectedValues, show) {
     return function (input) {
         var value = input.value.trim();
         var checked = input.getAttribute('type') !== 'radio' && input.getAttribute('type') !== 'checked' || input.checked;
-        var conditionMet = checked && (value === expectedValue && expectedValue !== "" || expectedValue === "" && value.length > 0);
+        var conditionMet = checked && (expectedValues.indexOf(value) > -1 && expectedValues.length > 0 || expectedValues.length === 0 && value.length > 0);
         if (show) {
             el.style.display = conditionMet ? '' : 'none';
         } else {
@@ -39,7 +39,7 @@ function toggleDependents(input) {
         var show = !!el.getAttribute('data-show-if');
         var conditions = show ? el.getAttribute('data-show-if').split(':') : el.getAttribute('data-hide-if').split(':');
         var nameCondition = conditions[0];
-        var valueCondition = conditions[1] || "";
+        var valueCondition = (conditions[1] || "").split('|');
 
         if (inputName !== nameCondition.toLowerCase()) {
             return;

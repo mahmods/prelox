@@ -2,15 +2,18 @@
   "entry": {
     "main": [
       "./scripts/main.js",
-      "./styles/main.scss",
-      "./styles/main-rtl.scss"
+      "./styles/main.scss"
+    ],
+    "main-rtl": [
+      "./styles/main-rtl.scss",
+      "./scripts/main-rtl.js"
     ],
     "customizer": [
       "./scripts/customizer.js"
     ]
   },
   "publicPath": "/wp-content/themes/mahacode",
-  "devUrl": "http://localhost/apps/prelox",
+  "devUrl": "http://preview.mahacode.com/prelox",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

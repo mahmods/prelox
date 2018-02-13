@@ -1,5 +1,7 @@
 $(function() {
     "use strict";
+    $(".video-frame iframe").attr("width","100%");
+    $(".video-frame iframe").attr("height","100%");
     //Open Button Menu 
     $(".button-bg").click(function() {
         $(".menu-icon").toggleClass("go");

@@ -30,4 +30,47 @@ class App extends Controller
         }
         return get_the_title();
     }
+
+    public static function get_pagination_links($query) {
+        return paginate_links(array(
+            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+            'total'        => $query->max_num_pages,
+            'current'      => max( 1, get_query_var( 'paged' ) ),
+            'format'       => '?paged=%#%',
+            'show_all'     => true,
+            'type'         => 'array',
+            'end_size'     => 2,
+            'mid_size'     => 1,
+            'prev_next'    => false,
+        ));
+    }
+
+    public static function comment_form() {
+        $commenter = wp_get_current_commenter();
+        $req = get_option( 'require_name_email' );
+        $aria_req = ( $req ? " aria-required='true'" : '' );
+
+        $fields =  array(
+          'author' =>
+            '<div class="col-sm-12 col-md-6">'.
+            '<input id="author" placeholder="'.__( 'Name', 'domainreference' ).'" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+            '" size="30"' . $aria_req . ' />
+            </div>',
+        
+          'email' =>
+            '<div class="col-sm-12 col-md-6">'.
+            '<input id="email" placeholder="'.__( 'Email', 'domainreference' ).'" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
+            '" size="30"' . $aria_req . ' />
+            </div>',
+        );
+
+        return comment_form(array(
+            'fields' => $fields,
+            'class_form' => 'row comment',
+            'title_reply_before' => '<a href="#">',
+            'title_reply_after' => '</a>',
+            'comment_notes_before' => '<div class="col-sm-12"><p class="comment-notes">' . __( 'Your email address will not be published.' ) . '</p></div>',
+            'comment_field' => '<div class="col-sm-12"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div>'
+        ));
+    }
 }

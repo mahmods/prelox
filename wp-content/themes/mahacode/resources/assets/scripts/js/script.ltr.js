@@ -1,5 +1,7 @@
 $(function() {
     "use strict";
+    $(".video-frame iframe").attr("width","100%");
+    $(".video-frame iframe").attr("height","100%");
     //Open Button Menu 
     $(".button-bg").click(function() {
         $(".menu-icon").toggleClass("go");
@@ -107,15 +109,21 @@ $(function() {
     var modal = document.getElementById('myModal');
     var btn = document.getElementById("myBtn");
     var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function() {
-        modal.style.display = "block";
+    if (btn) {
+        btn.onClick = function() {
+            modal.style.display = "block";
+        }
     }
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-        if (event.target == modal) {
+    if (span) {
+        span.onClick = function() {
             modal.style.display = "none";
+        }
+    }
+    if (window) {
+        window.onClick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     }
 });
