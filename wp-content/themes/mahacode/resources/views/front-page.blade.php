@@ -4,48 +4,17 @@
 <!--Start Header Slider-->
 <div class="slider">
   <div class="header-slider">
-    <div class="header" data-src="@asset('images/home-bg.png')">
+  @if($slider)
+  @foreach($slider as $slide)
+    <div class="header" data-src="{{$slide['image']}}">
       <div class="content">
-        <h1>
-          <span> بريلوكس</span> يضمن لك سعادة زوجية مدى الحياة</h1>
-        <p>
-          هو منتج طبيعي 100% ذو تركيبه فريدة مبتكره ومثبته علميا وحائزه علي براءة إختراع
-        </p>
-        <a href="#">قراءة المزيد</a>
+        <h1>{{$slide['title']}}</h1>
+        <p>{{$slide['content']}}</p>
+        <a href="{{$slide['link']}}">قراءة المزيد</a>
       </div>
     </div>
-
-    <div class="header" data-src="@asset('images/home-bg.png')">
-      <div class="content">
-        <h1>
-          <span> بريلوكس</span> يضمن لك سعادة زوجية مدى الحياة</h1>
-        <p>
-          هو منتج طبيعي 100% ذو تركيبه فريدة مبتكره ومثبته علميا وحائزه علي براءة إختراع
-        </p>
-        <a href="#">قراءة المزيد</a>
-      </div>
-    </div>
-
-    <div class="header" data-src="@asset('images/home-bg.png')">
-      <div class="content">
-        <h1>
-          <span> بريلوكس</span> يضمن لك سعادة زوجية مدى الحياة</h1>
-        <p>
-          هو منتج طبيعي 100% ذو تركيبه فريدة مبتكره ومثبته علميا وحائزه علي براءة إختراع
-        </p>
-        <a href="#">قراءة المزيد</a>
-      </div>
-    </div>
-
-    <div class="header" data-src="@asset('images/home-bg.png')">
-      <div class="content">
-        <h1>بريلوكس يضمن لك سعادة زوجية مدى الحياة</h1>
-        <p>
-          هو منتج طبيعي 100% ذو تركيبه فريدة مبتكره ومثبته علميا وحائزه علي براءة إختراع
-        </p>
-        <a href="#">قراءة المزيد</a>
-      </div>
-    </div>
+    @endforeach
+    @endif
   </div>
 </div>
 <!--Start info-->
@@ -58,9 +27,10 @@
             <li class="fas fa-envelope"></li>
             <li>تواصل معنا</li>
           </ul>
+          <?php $info = App::contactInfo() ?>
           <ul class="call">
-            <li>info@example</li>
-            <li>info@example</li>
+            <li>{{$info['email_1']}}</li>
+            <li>{{$info['email_2']}}</li>
           </ul>
         </div>
       </div>
@@ -72,8 +42,8 @@
             <li>تواصل معنا</li>
           </ul>
           <ul class="call">
-            <li>info@example</li>
-            <li>info@example</li>
+            <li>{{$info['phone_1']}}</li>
+            <li>{{$info['phone_2']}}</li>
           </ul>
         </div>
       </div>
@@ -85,8 +55,7 @@
             <li>تواصل معنا</li>
           </ul>
           <ul class="call">
-            <li>info@example</li>
-            <li>info@example</li>
+            <li>{{$info['address']}}</li>
           </ul>
         </div>
       </div>
@@ -113,7 +82,7 @@
 
       <div class="col-sm-12 col-lg-6">
         <div class="block-img">
-          <img src="@asset('images/about.png')">
+          <img src="{{$about_us_image}}">
         </div>
       </div>
     </div>
@@ -129,30 +98,30 @@
     <h2 class="title">لماذا بريلوكس</h2>
     <div class="row">
       <div class="col-md-12 col-lg-3">
-        <div class="box" data-src="@asset('images/why.png')">
-          <p>فاعلية مؤكدة ومثبتة بالتجارب والأبحاث العلمية</p>
+        <div class="box" data-src="{{$why_section[0]['image']}}">
+          <p>{{$why_section[0]['content']}}</p>
         </div>
       </div>
 
       <div class="col-md-12 col-lg-6">
         <div class="row">
           <div class="col-sm-12">
-            <div class="block" data-src="@asset('images/why.png')">
-              <p>فاعلية مؤكدة ومثبتة بالتجارب والأبحاث العلمية العلمية العلمية العلمية العلمية </p>
+            <div class="block" data-src="{{$why_section[1]['image']}}">
+              <p>{{$why_section[1]['content']}}</p>
             </div>
           </div>
 
           <div class="col-sm-12">
-            <div class="block" data-src="@asset('images/why.png')">
-              <p>فاعلية مؤكدة ومثبتة بالتجارب والأبحاث العلمية العلمية العلمية العلمية العلمية </p>
+            <div class="block" data-src="{{$why_section[2]['image']}}">
+              <p>{{$why_section[2]['content']}}</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="col-md-12 col-lg-3">
-        <div class="box" data-src="@asset('images/why.png')">
-          <p>فاعلية مؤكدة ومثبتة بالتجارب والأبحاث العلمية</p>
+        <div class="box" data-src="{{$why_section[3]['image']}}">
+          <p>{{$why_section[3]['content']}}</p>
         </div>
       </div>
     </div>
@@ -298,19 +267,10 @@
 <!-- Start Form And Our Comany-->
 <div class="company-form">
   <!--Start Form-->
-
   <div data-src="@asset('images/order.png" class="form-style')">
-    <form class="form-contnt ">
-      <h2 class="title">احجز المنتج الآن</h2>
-      <input type="text" placeholder="الاسم بالكامل :">
-      <input type="text" placeholder="البريد الإلكترونى:">
-      <input type="text" placeholder="الشركة" />
-      <input type="number" placeholder="الكمية " />
-      <input type="submit" value="ارسال">
-    </form>
+    {!!do_shortcode('[hf_form slug="purchase"]')!!}
   </div>
   <!--End Form-->
-
 </div>
 <!-- Start Form And Our Comany-->
 @include('partials.map')
