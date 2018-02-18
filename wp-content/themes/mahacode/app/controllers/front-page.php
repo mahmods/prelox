@@ -6,6 +6,18 @@ use Sober\Controller\Controller;
 
 class FrontPage extends Controller
 {
+    public function slider() {
+        return get_field("slider");
+    }
+
+    public function aboutUsImage() {
+        return get_field("about_us_image");
+    }
+
+    public function whySection() {
+        return get_field("why_section");
+    }
+
     public function testimonials() {
         $args = array(
             'post_type' => 'testimonials',

@@ -189,3 +189,26 @@ function custom_post_testimonials() {
 	register_post_type( 'testimonials', $args );
 
 }
+
+add_filter( 'hf_form_element_class_attr', function( $message ) {
+    return 'form-contnt';
+});
+
+if( function_exists('acf_add_options_page') ) {
+    $args = array(
+        'page_title' => 'Contact Information',
+        'menu_title' => 'Contact Info',
+        'menu_slug' => 'contact_info',
+        'position' => 2,
+        'icon_url' => "dashicons-location-alt",
+    );
+    acf_add_options_page($args);
+}
+
+add_filter('acf/fields/google_map/api', function ( $api ){
+	
+	$api['key'] = 'AIzaSyDnEX6zLgaPJTW1Eb7rJJoADHvtNzee8hs';
+	
+	return $api;
+	
+});

@@ -73,4 +73,14 @@ class App extends Controller
             'comment_field' => '<div class="col-sm-12"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div>'
         ));
     }
+
+    public static function contactInfo() {
+        $info = array();
+        $info['email_1'] = get_field("email_1", "options");
+        $info['email_2'] = get_field("email_2", "options");
+        $info['phone_1'] = get_field("phone_1", "options");
+        $info['phone_2'] = get_field("phone_2", "options");
+        $info['address'] = pll_current_language() == "ar" ? get_field("Address", "options")['ar'] : get_field("Address", "options")['en'];
+        return $info;
+    }
 }
