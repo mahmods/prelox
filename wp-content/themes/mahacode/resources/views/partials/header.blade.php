@@ -1,3 +1,4 @@
+<?php $info = App::contactInfo() ?>
 <!--Start Navigation-->
 <div class="navigation">
   <div class="container">
@@ -5,24 +6,24 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
 
         <ul class="info">
-          <li class="fas fa-envelope">info@example</li>
-          <li class="fas fa-phone">info@example</li>
+          <li class="fas fa-envelope">{{$info['email_1']}}</li>
+          <li class="fas fa-phone">{{$info['phone_1']}}</li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
 
         <ul class="social">
           <li>
-            <a href="#" class="fab fa-facebook-f" target="_blank" title="social"></a>
+            <a href="{{$info['facebook']}}" class="fab fa-facebook-f" target="_blank" title="social"></a>
           </li>
           <li>
-            <a href="#" class="fab fa-twitter" target="_blank" title="social"></a>
+            <a href="{{$info['twitter']}}" class="fab fa-twitter" target="_blank" title="social"></a>
           </li>
           <li>
-            <a href="#" class="fab fa-linkedin-in" target="_blank" title="social"></a>
+            <a href="{{$info['linkedin']}}" class="fab fa-linkedin-in" target="_blank" title="social"></a>
           </li>
           <li>
-            <a href="#" class="fab fa-youtube" target="_blank" title="social"></a>
+            <a href="{{$info['youtube']}}" class="fab fa-youtube" target="_blank" title="social"></a>
           </li>
         </ul>
       </div>
@@ -50,7 +51,7 @@
       @if (has_nav_menu('primary_navigation'))
       {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu'])!!}
       @endif
-    <a href="product.html" class="order-button">احجز المنتج الان</a>
+    <a href="<?=get_the_permalink(pll_get_post(43))?>" class="order-button">احجز المنتج الان</a>
   </div>
 </div>
 <!--End Navbar-->

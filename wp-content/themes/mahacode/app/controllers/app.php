@@ -80,6 +80,10 @@ class App extends Controller
         $info['email_2'] = get_field("email_2", "options");
         $info['phone_1'] = get_field("phone_1", "options");
         $info['phone_2'] = get_field("phone_2", "options");
+        $info['facebook'] = get_field("social", "options")['facebook'];
+        $info['twitter'] = get_field("social", "options")['twitter'];
+        $info['linkedin'] = get_field("social", "options")['linkedin'];
+        $info['youtube'] = get_field("social", "options")['youtube'];
         $info['address'] = pll_current_language() == "ar" ? get_field("Address", "options")['ar'] : get_field("Address", "options")['en'];
         return $info;
     }

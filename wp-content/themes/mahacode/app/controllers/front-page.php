@@ -42,6 +42,11 @@ class FrontPage extends Controller
         return get_field("main_block", $about_page);
     }
 
+    public function aboutUsLink() {
+        $about_page = pll_get_post(20);
+        return get_the_permalink($about_page);
+    }
+
     public function productVideo() {
         $product_page = pll_get_post(43);
         return get_field("video", $product_page);

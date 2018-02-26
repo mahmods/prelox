@@ -1,8 +1,8 @@
 {
   "entry": {
     "main": [
-      "./scripts/main.js",
-      "./styles/main.scss"
+      "./styles/main.scss",
+      "./scripts/main.js"
     ],
     "main-rtl": [
       "./styles/main-rtl.scss",
@@ -12,9 +12,9 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/wp-content/themes/mahacode",
-  "devUrl": "http://preview.mahacode.com/prelox",
-  "proxyUrl": "http://preview.mahacode.com/prelox",
+  "publicPath": "/prelox/wp-content/themes/mahacode",
+  "devUrl": "http://localhost:8080/prelox",
+  "proxyUrl": "http://localhost:3000/prelox",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
     "app/**/*.php",

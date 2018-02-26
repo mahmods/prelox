@@ -82,17 +82,11 @@
 
 <!-- Start Form And Our Comany-->
 <div class="company-form">
-  <div data-src="@asset('images/order.png')" class="form-style">
-    <form class="form-contnt ">
-      <h2 class="title">احجز المنتج الآن</h2>
-      <input type="text" placeholder="الاسم بالكامل :">
-      <input type="text" placeholder="البريد الإلكترونى:">
-      <input type="text" placeholder="الشركة" />
-      <input type="number" placeholder="الكمية " />
-      <input type="submit" value="ارسال">
-    </form>
-  </div>
-
+<!--Start Form-->
+<div data-src="@asset('images/order.png" class="form-style')">
+  {!!do_shortcode('[hf_form slug="purchase"]')!!}
+</div>
+<!--End Form-->
 </div>
 <!-- Start Form And Our Comany-->
 

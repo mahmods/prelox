@@ -1,3 +1,4 @@
+<?php $info = App::contactInfo() ?>
 <!--Start Footer-->
 <div class="footer" data-src="@asset('images/footer.png')">
         <div class="container">
@@ -36,35 +37,35 @@
                     </form>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-lg-3">
-                    <h2>اتصل بنا</h2>
+                    <h2>@php(pll_e("اتصل بنا"))</h2>
 
                     <div class="footer-icon">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>مقر الشركة الرئيسى . والعنوان والعنوان والعنوانوالعنوانوالعنوان والعنوان v بالتفصيل</span>
+                        <span>{{$info['address']}}</span>
                     </div>
 
                     <div class="footer-icon">
                         <i class="fas fa-envelope"></i>
-                        <span>info@example.com</span>
+                        <span>{{$info['email_1']}}</span>
                     </div>
                     <div class="footer-icon">
                         <i class="fas fa-phone"></i>
-                        <span>0124 587 887</span>
+                        <span>{{$info['phone_1']}}</span>
                     </div>
 
                     <ul class="social">
-                        <li>
-                            <a href="#" class="fab fa-facebook-f" target="_blank" title="social"></a>
-                        </li>
-                        <li>
-                            <a href="#" class="fab fa-twitter" target="_blank" title="social"></a>
-                        </li>
-                        <li>
-                            <a href="#" class="fab fa-linkedin-in" target="_blank" title="social"></a>
-                        </li>
-                        <li>
-                            <a href="#" class="fab fa-youtube" target="_blank" title="social"></a>
-                        </li>
+                    <li>
+                    <a href="{{$info['facebook']}}" class="fab fa-facebook-f" target="_blank" title="social"></a>
+                  </li>
+                  <li>
+                    <a href="{{$info['twitter']}}" class="fab fa-twitter" target="_blank" title="social"></a>
+                  </li>
+                  <li>
+                    <a href="{{$info['linkedin']}}" class="fab fa-linkedin-in" target="_blank" title="social"></a>
+                  </li>
+                  <li>
+                    <a href="{{$info['youtube']}}" class="fab fa-youtube" target="_blank" title="social"></a>
+                  </li>
                     </ul>
 
                 </div>

@@ -13,7 +13,7 @@
       @while ($posts->have_posts()) @php($posts->the_post())
       <div class="col-sm-12 col-lg-6">
         <div class="blog-block">
-          <div class="img" data-src="@asset('images/article1.png')">
+          <div class="img" data-src="@php(the_post_thumbnail_url('small'))">
             <a href="@php(the_permalink())" class="button fas fa-plus"></a>
           </div>
           <div class="describtion">

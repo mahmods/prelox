@@ -77,7 +77,7 @@
       <div class="col-sm-12 col-lg-6">
         <h2 class="title">{{$about_block['title']}}</h2>
         <p>{{$about_block['content']}}</p>
-        <a href="#" title="link">قراءة المزيد</a>
+        <a href="{{$about_us_link}}" title="link">قراءة المزيد</a>
       </div>
 
       <div class="col-sm-12 col-lg-6">
@@ -145,7 +145,7 @@
   <div class="modal-content">
 
     <div class="video-frame">
-        {!!$video!!}
+        {!!$product_video!!}
     </div>
   </div>
 
