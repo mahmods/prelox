@@ -22,18 +22,6 @@
         <div class="some-title">
           <?php if ( function_exists( 'echo_ald_crp' ) ) echo_crp(); ?>
         </div>
-        <a class="media" href="#">
-          <img src="@asset('images/media.png')">
-        </a>
-        <a class="media" href="#">
-        <img src="@asset('images/media.png')">
-        </a>
-        <a class="media" href="#">
-        <img src="@asset('images/media.png')">
-        </a>
-        <a class="media" href="#">
-        <img src="@asset('images/media.png')">
-        </a>
       </div>
 
     </div>
