@@ -7,7 +7,7 @@
                     <a href="index.html">
                         <img src="@asset('images/logo-footer.png')">
                     </a>
-                    <p>منتج طبيعي 100% ذو تركيبه فريدة مبتكره ومثبته علميا وحائزه علي براءة إختراع</p>
+                    <p><?=get_field("about_footer", "options")["ar"]?></p>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-lg-2">
@@ -29,12 +29,13 @@
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-lg-3">
-                    <h2>كن دائما على اتصال بنا</h2>
-                    <p>منتج طبيعي 100% ذو تركيبه فريدة مبتكره ومثبته علميا وحائزه علي براءة إختراع</p>
-                    <form>
-                        <input type="text" placeholder="البريد الالكترونى :">
-                        <input type="submit" value="ارسال">
-                    </form>
+                    <h2><?php pll_e("newsletter_title")?></h2>
+                    <p><?php pll_e("newsletter_content")?></p>
+                    <?=do_shortcode('
+                    [newsletter_form button_label="'.pll__("Subscribe").'"]
+                    [newsletter_field name="email" label="" placeholder="'.pll__("Email Address").'"]
+                    [/newsletter_form]
+                    ')?>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-lg-3">
                     <h2>@php(pll_e("اتصل بنا"))</h2>
