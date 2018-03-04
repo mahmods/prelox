@@ -12,8 +12,8 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/apps/prelox/wp-content/themes/mahacode",
-  "devUrl": "http://localhost/apps/prelox",
+  "publicPath": "/prelox/wp-content/themes/mahacode",
+  "devUrl": "http://localhost:8080/prelox",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

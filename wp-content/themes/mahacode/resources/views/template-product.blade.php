@@ -7,7 +7,7 @@
 <!--Start Product-->
 <div class="product">
   <div class="container ">
-    <h2 class="title">تفاصيل علمية وطبية عن بريلوكس</h2>
+    <h2 class="title"><?=pll__("Scientific and medical details about Prelox")?></h2>
     <div class="row">
       <div class="col-sm-12 col-md-4">
       @if(!empty($details[0]))
@@ -61,7 +61,7 @@
 <!--Start Video-->
 <div class="video" data-src="@asset('images/video.png')">
   <div class="video-content" id="model-box">
-    <h3>لماذا بريلوكس</h3>
+    <h3><?=pll__("Why Prelox")?></h3>
     <i class="fas fa-video" id="myBtn"></i>
   </div>
 

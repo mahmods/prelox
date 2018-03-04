@@ -51,7 +51,7 @@
       @if (has_nav_menu('primary_navigation'))
       {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu'])!!}
       @endif
-    <a href="<?=get_the_permalink(pll_get_post(43))?>" class="order-button">احجز المنتج الان</a>
+    <a href="<?=get_the_permalink(pll_get_post(43))?>" class="order-button"><?=pll__("Purchase Now")?></a>
   </div>
 </div>
 <!--End Navbar-->

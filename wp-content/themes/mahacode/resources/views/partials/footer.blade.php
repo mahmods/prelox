@@ -4,10 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-lg-4">
-                    <a href="index.html">
+                    <a href="{{ home_url('/') }}">
                         <img src="@asset('images/logo-footer.png')">
                     </a>
-                    <p><?=get_field("about_footer", "options")["ar"]?></p>
+                    <p><?=get_field("about_footer", "options")[pll_current_language()]?></p>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-lg-2">
@@ -38,7 +38,7 @@
                     ')?>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-lg-3">
-                    <h2>@php(pll_e("اتصل بنا"))</h2>
+                    <h2>@php(pll_e("Contact Us"))</h2>
 
                     <div class="footer-icon">
                         <i class="fas fa-map-marker-alt"></i>

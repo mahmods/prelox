@@ -10,7 +10,7 @@
       <div class="content">
         <h1>{{$slide['title']}}</h1>
         <p>{{$slide['content']}}</p>
-        <a href="{{$slide['link']}}">قراءة المزيد</a>
+        <a href="{{$slide['link']}}"><?=pll__("Read More")?></a>
       </div>
     </div>
     @endforeach
@@ -25,7 +25,7 @@
         <div class="block">
           <ul class="info">
             <li class="fas fa-envelope"></li>
-            <li>تواصل معنا</li>
+            <li><?=pll__("Contact Us")?></li>
           </ul>
           <?php $info = App::contactInfo() ?>
           <ul class="call">
@@ -39,7 +39,7 @@
         <div class="block">
           <ul class="info">
             <li class="fas fa-phone"></li>
-            <li>تواصل معنا</li>
+            <li><?=pll__("Contact Us")?></li>
           </ul>
           <ul class="call">
             <li>{{$info['phone_1']}}</li>
@@ -52,7 +52,7 @@
         <div class="block">
           <ul class="info">
             <li class="fas fa-map-marker-alt"></li>
-            <li>تواصل معنا</li>
+            <li><?=pll__("Contact Us")?></li>
           </ul>
           <ul class="call">
             <li>{{$info['address']}}</li>
@@ -66,10 +66,6 @@
 </div>
 <!--End Header Slider-->
 
-
-
-
-
 <!--Start About Us-->
 <div class="about-us">
   <div class="container ">
@@ -77,7 +73,7 @@
       <div class="col-sm-12 col-lg-6">
         <h2 class="title">{{$about_block['title']}}</h2>
         <p>{{$about_block['content']}}</p>
-        <a href="{{$about_us_link}}" title="link">قراءة المزيد</a>
+        <a href="{{$about_us_link}}" title="link"><?=pll__("Read More")?></a>
       </div>
 
       <div class="col-sm-12 col-lg-6">
@@ -95,7 +91,7 @@
 <!--Start Why Product-->
 <div class="why">
   <div class="container">
-    <h2 class="title">لماذا بريلوكس</h2>
+    <h2 class="title"><?=pll__("Why Prelox")?></h2>
     <div class="row">
       <div class="col-md-12 col-lg-3">
         <div class="box" data-src="{{$why_section[0]['image']}}">
@@ -132,7 +128,7 @@
 <!--Start Video-->
 <div class="video" data-src="@asset('images/video.png')">
   <div class="video-content" id="model-box">
-    <h3>لماذا بريلوكس</h3>
+    <h3><?=pll__("Why Prelox")?></h3>
     <i class="fas fa-video" id="myBtn"></i>
   </div>
 
@@ -156,7 +152,7 @@
 <!--Start Product-->
 <div class="product">
   <div class="container ">
-    <h2 class="title">تفاصيل علمية وطبية عن بريلوكس</h2>
+    <h2 class="title"><?=pll__("Scientific and medical details about Prelox")?></h2>
     <div class="row">
       <div class="col-sm-12 col-md-4">
       @if(!empty($product_details[0]))
@@ -209,7 +205,7 @@
 <!--Start Testmonial-->
 <div class="testmonial" data-src="@asset('images/bg-testmonial.png')">
   <div class="container">
-    <h2 class="title">آراء العملاء</h2>
+    <h2 class="title"><?=pll__("Testimonials")?></h2>
     <div class="row testmonial-slider">
     @if($testimonials)
     @foreach($testimonials as $testimony)
@@ -239,7 +235,7 @@
 <!--Start Article-->
 <div class=" article-home">
   <div class="container">
-    <h2 class="title">المدونة</h2>
+    <h2 class="title"><?=pll__("Blog")?></h2>
     <div class="row article-slider">
     @if($blog_posts)
     @foreach($blog_posts as $post)
@@ -250,7 +246,7 @@
           <div class="article-paragraph">
             <h3>{{get_the_title($post)}}</h3>
             <p>{{mb_strimwidth(strip_tags($post->post_content),0,50)}}</p>
-            <a href="{{get_the_permalink($post)}}">قراءة المزيد</a>
+            <a href="{{get_the_permalink($post)}}"><?=pll__("Read More")?></a>
           </div>
         </div>
       </div>
